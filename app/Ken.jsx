@@ -1,16 +1,24 @@
 import React from 'react';
-
-const msg='ken';
 class Ken extends React.Component {
+	 constructor(props) {
+ 		 super(props);
+ 		 this.state= {}
+   }
    render() {
-      return (
+      return(
          <div>
-            Hello {msg}!!!
+            Hello {this.props.name}!!!
          </div>
       );
    }
 }
 
-Ken.defaultProps = {
+Ken.propTypes = {
+  name: React.PropTypes.string,
 }
+
+Ken.defaultProps = {
+  name: 'Tom',
+}
+
 export default Ken;

@@ -4,5 +4,5 @@ import App from './App.jsx';
 import Ken from './Ken.jsx';
 
 ReactDOM.render(<App />, document.getElementById('app'));
-ReactDOM.render(<Ken />, document.getElementById('ken'));
+ReactDOM.render(<Ken name='ken' />, document.getElementById('ken'));
 
