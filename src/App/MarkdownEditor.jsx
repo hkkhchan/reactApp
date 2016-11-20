@@ -8,9 +8,7 @@ class MarkdownEditor extends React.Component {
         }
     }
     handleChange(e) {
-        this.setState({value: e.target.value});
-        //don't know why the above line can't be 
-        //this.setSate({value: this.refs.textarea.value});
+        this.setState({value: this.textarea.value});
     }
     rawMarkup() {
         const md = new Remarkable();
@@ -22,7 +20,7 @@ class MarkdownEditor extends React.Component {
             <h3>Input</h3>
             <textarea
               onChange={this.handleChange}
-              ref="textarea"
+              ref={textarea => {this.textarea = textarea}}
               defaultValue={this.state.value} />
             <h3>Output</h3>
             <div
